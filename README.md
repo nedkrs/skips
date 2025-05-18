@@ -1,12 +1,52 @@
-# React + Vite
+# Skips Selector
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A multi-step skip-hire booking UI built with Vite, React and TailwindCSS.  
+It walks the user through:
 
-Currently, two official plugins are available:
+1. Entering postcode
+2. Choosing waste type
+3. Selecting a skip (with live filtering & sorting)
+4. Permit check
+5. Date selection
+6. Payment
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+-   **Wizard/Stepper** — clickable steps, responsive collapse to 3-item or 2-item views on narrow screens, and a 250 px radial progress view.
+-   **Sticky header & footer** — stepper stays pinned at top, Next/Back nav at bottom, only main content scrolls.
+-   **Skip selection**
+    -   Fetches skip data via `useSkips()`, shows a loading spinner while loading.
+    -   Responsive grid (1–3 columns).
+    -   Filter by yard size & price range using dual-thumb sliders.
+    -   Toggles for “road legal” & “heavy waste” allowed.
+    -   Sort buttons for size ↑↓ and price ↑↓.
+    -   Click a skip card to select/unselect it (only one at a time), Next button enables only after selection.
+-   **Reusable components** — `Stepper`, `FilterBar`, `SkipCard`, `NavigationButtons`, etc.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+-   **Vite** + React 18
+-   **TailwindCSS** for utility-first styling
+-   **Heroicons** for vector icons
+-   **react-range** for dual-thumb sliders
+-   Fetch API (no external state library)
+
+## Getting Started
+
+### Prerequisites
+
+-   Node.js v16+
+-   npm or yarn
+
+### Installation
+
+```bash
+# clone the repo
+git clone https://github.com/nedkrs/skips.git
+cd skips
+
+# install dependencies
+npm install
+# or
+yarn
+```
